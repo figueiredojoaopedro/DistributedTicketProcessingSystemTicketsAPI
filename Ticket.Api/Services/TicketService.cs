@@ -12,7 +12,7 @@ namespace Ticket.Api.Services
         }
 
         public async Task CreateTicketAsync(CreateTicketReq ticket) {
-            await _publisher.PublishAsync(ticket, "amq.direct", "tickets");
+            await _publisher.PublishAsync(ticket, "ticketsExchange.direct", "tickets");
         }
     }
 }
